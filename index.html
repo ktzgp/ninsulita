@@ -18,12 +18,10 @@
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            padding-top: 20px;
+            align-items: center;
             background: #FFDAE9;
             overflow: hidden;
-            padding-left: 12px;
-            padding-right: 12px;
+            padding: 12px;
         }
 
         /* Envelope stage: no modal, just envelope on pink background */
@@ -447,9 +445,7 @@
 
         @media (max-width: 600px) {
             body {
-                padding-top: 80px;
-                padding-left: 10px;
-                padding-right: 10px;
+                padding: 10px;
             }
             .container {
                 padding: 16px 20px;
@@ -482,9 +478,7 @@
 
         @media (max-width: 420px) {
             body {
-                padding-top: 75px;
-                padding-left: 8px;
-                padding-right: 8px;
+                padding: 8px;
             }
             .container {
                 padding: 14px 16px;
@@ -517,9 +511,7 @@
 
         @media (max-width: 360px) {
             body {
-                padding-top: 70px;
-                padding-left: 6px;
-                padding-right: 6px;
+                padding: 6px;
             }
             .container {
                 padding: 12px 14px;
@@ -553,27 +545,27 @@
         /* Short viewport: shrink contents to respect padding / prevent overflow */
         @media (max-height: 800px) {
             body {
-                padding-top: 15px;
+                padding: 14px;
             }
         }
         @media (max-height: 700px) {
             body {
-                padding-top: 12px;
+                padding: 12px;
             }
         }
         @media (max-height: 600px) {
             body {
-                padding-top: 10px;
+                padding: 10px;
             }
         }
         @media (max-height: 500px) {
             body {
-                padding-top: 8px;
+                padding: 8px;
             }
         }
         @media (max-height: 420px) {
             body {
-                padding-top: 6px;
+                padding: 6px;
             }
         }
 
@@ -627,7 +619,7 @@
         <div class="modal-inner">
             <!-- VIEW: Puzzle (playing + completed state in same view) -->
             <div id="puzzleView" class="modal-view">
-                <h1 class="modal-title">Moja Nina</h1>
+                <h1 class="modal-title">Nina i ja</h1>
                 <div class="puzzle-container" id="puzzleContainer">
                     <div class="puzzle-grid-wrap" id="puzzleGridWrap">
                         <div class="puzzle-grid" id="puzzleGrid"></div>
