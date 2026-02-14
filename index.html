@@ -270,7 +270,6 @@
         .puzzle-full-image-overlay {
             position: absolute;
             inset: 0;
-            border-radius: 8px;
             overflow: hidden;
             opacity: 0;
             transition: opacity 0.25s ease;
@@ -570,22 +569,6 @@
             height: auto;
         }
 
-        .reset-btn {
-            background: none;
-            border: none;
-            color: #666;
-            font-size: 0.9em;
-            cursor: pointer;
-            text-decoration: underline;
-            padding: 8px 12px;
-            margin-top: 8px;
-            font-family: inherit;
-        }
-
-        .reset-btn:hover {
-            color: #111;
-        }
-
     </style>
 </head>
 <body>
@@ -608,12 +591,12 @@
         <div class="modal-inner">
             <!-- VIEW: Puzzle (playing + completed state in same view) -->
             <div id="puzzleView" class="modal-view">
-                <h1 class="modal-title">Moja Ninuška</h1>
+                <h1 class="modal-title">Moja Nina</h1>
                 <div class="puzzle-container" id="puzzleContainer">
                     <div class="puzzle-grid-wrap" id="puzzleGridWrap">
                         <div class="puzzle-grid" id="puzzleGrid"></div>
                         <div class="puzzle-full-image-overlay" id="puzzleFullImageOverlay">
-                            <img src="images/78d3c77f-030c-4914-83b3-da6d6b90acbb.jpg" alt="" />
+                            <img src="images/20260214_155156.jpg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -630,7 +613,6 @@
                 <div class="success-gif-wrap">
                     <img src="1JmGiBtqTuehfYxuy9.webp" alt="" />
                 </div>
-                <button type="button" class="reset-btn" id="resetBtn">Reset</button>
             </div>
         </div>
     </div>
@@ -779,10 +761,6 @@
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => successView.classList.add('visible'));
             });
-        });
-        
-        document.getElementById('resetBtn').addEventListener('click', () => {
-            window.location.reload();
         });
         
         function runConfettiFor(ms) {
