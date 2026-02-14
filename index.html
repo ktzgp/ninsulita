@@ -421,6 +421,30 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        .button-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .no-btn {
+            font-size: 19px;
+            padding: 11px 22px;
+            background: #FFDAE9;
+            color: #333;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .no-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
         @media (max-width: 600px) {
             body {
                 padding-top: 15px;
@@ -442,6 +466,10 @@
                 font-size: 18px;
             }
             .yes-only-btn {
+                font-size: 18px;
+                padding: 11px 22px;
+            }
+            .no-btn {
                 font-size: 18px;
                 padding: 11px 22px;
             }
@@ -476,6 +504,10 @@
                 font-size: 17px;
                 padding: 10px 20px;
             }
+            .no-btn {
+                font-size: 17px;
+                padding: 10px 20px;
+            }
             .puzzle-container {
                 width: min(78vw, 60vh);
                 max-width: 340px;
@@ -504,6 +536,10 @@
                 font-size: 16px;
             }
             .yes-only-btn {
+                font-size: 16px;
+                padding: 9px 18px;
+            }
+            .no-btn {
                 font-size: 16px;
                 padding: 9px 18px;
             }
@@ -603,7 +639,10 @@
                 <div class="puzzle-reveal-text" id="puzzleRevealText">
                     <p class="complete-line">Tvoj osmijeh mi uljepša i najobičniji dan, a uz tebe se osjećam sretno i ispunjeno.</p>
                     <p class="valentine-question">Hoćeš li sa mnom provesti Valentinovo?</p>
-                    <button type="button" class="yes-only-btn" id="yesBtn">Da 😊</button>
+                    <div class="button-group">
+                        <button type="button" class="yes-only-btn" id="yesBtn">Da 😊</button>
+                        <button type="button" class="no-btn" id="noBtn">Ne 😭</button>
+                    </div>
                 </div>
             </div>
 
@@ -752,6 +791,24 @@
         }
         
         initPuzzle();
+        
+        let noClickCount = 0;
+        const noBtn = document.getElementById('noBtn');
+        
+        noBtn.addEventListener('click', () => {
+            noClickCount++;
+            if (noClickCount === 1) {
+                noBtn.style.transform = 'scale(0.8)';
+            } else if (noClickCount === 2) {
+                noBtn.style.transform = 'scale(0.5)';
+            } else if (noClickCount >= 3) {
+                noBtn.style.transform = 'scale(0)';
+                noBtn.style.opacity = '0';
+                setTimeout(() => {
+                    noBtn.style.display = 'none';
+                }, 300);
+            }
+        });
         
         const container = document.querySelector('.container');
         document.getElementById('yesBtn').addEventListener('click', () => {
