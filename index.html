@@ -18,10 +18,12 @@
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+            padding-top: 20px;
             background: #FFDAE9;
             overflow: hidden;
-            padding: 12px;
+            padding-left: 12px;
+            padding-right: 12px;
         }
 
         /* Envelope stage: no modal, just envelope on pink background */
@@ -422,15 +424,48 @@
 
         @media (max-width: 600px) {
             body {
-                padding: 10px;
+                padding-top: 15px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
             .container {
                 padding: 16px 20px;
                 max-width: calc(100vw - 20px);
             }
             .modal-view .modal-title {
-                font-size: 20px;
+                font-size: 22px;
                 margin-bottom: 12px;
+            }
+            .puzzle-reveal-text .complete-line {
+                font-size: 17px;
+            }
+            .puzzle-reveal-text .valentine-question {
+                font-size: 18px;
+            }
+            .yes-only-btn {
+                font-size: 18px;
+                padding: 11px 22px;
+            }
+            .puzzle-container {
+                width: min(75vw, 65vh);
+                max-width: 380px;
+                padding: 6px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body {
+                padding-top: 12px;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .container {
+                padding: 14px 16px;
+                max-width: calc(100vw - 16px);
+            }
+            .modal-view .modal-title {
+                font-size: 20px;
+                margin-bottom: 10px;
             }
             .puzzle-reveal-text .complete-line {
                 font-size: 16px;
@@ -443,23 +478,25 @@
                 padding: 10px 20px;
             }
             .puzzle-container {
-                width: min(75vw, 65vh);
-                max-width: 380px;
-                padding: 6px;
+                width: min(78vw, 60vh);
+                max-width: 340px;
+                padding: 5px;
             }
         }
 
-        @media (max-width: 420px) {
+        @media (max-width: 360px) {
             body {
-                padding: 8px;
+                padding-top: 10px;
+                padding-left: 6px;
+                padding-right: 6px;
             }
             .container {
-                padding: 14px 16px;
-                max-width: calc(100vw - 16px);
+                padding: 12px 14px;
+                max-width: calc(100vw - 12px);
             }
             .modal-view .modal-title {
-                font-size: 18px;
-                margin-bottom: 10px;
+                font-size: 19px;
+                margin-bottom: 8px;
             }
             .puzzle-reveal-text .complete-line {
                 font-size: 15px;
@@ -472,35 +509,6 @@
                 padding: 9px 18px;
             }
             .puzzle-container {
-                width: min(78vw, 60vh);
-                max-width: 340px;
-                padding: 5px;
-            }
-        }
-
-        @media (max-width: 360px) {
-            body {
-                padding: 6px;
-            }
-            .container {
-                padding: 12px 14px;
-                max-width: calc(100vw - 12px);
-            }
-            .modal-view .modal-title {
-                font-size: 17px;
-                margin-bottom: 8px;
-            }
-            .puzzle-reveal-text .complete-line {
-                font-size: 14px;
-            }
-            .puzzle-reveal-text .valentine-question {
-                font-size: 15px;
-            }
-            .yes-only-btn {
-                font-size: 15px;
-                padding: 8px 16px;
-            }
-            .puzzle-container {
                 width: min(80vw, 58vh);
                 max-width: 300px;
                 padding: 4px;
@@ -510,27 +518,27 @@
         /* Short viewport: shrink contents to respect padding / prevent overflow */
         @media (max-height: 800px) {
             body {
-                padding: 14px;
+                padding-top: 15px;
             }
         }
         @media (max-height: 700px) {
             body {
-                padding: 12px;
+                padding-top: 12px;
             }
         }
         @media (max-height: 600px) {
             body {
-                padding: 10px;
+                padding-top: 10px;
             }
         }
         @media (max-height: 500px) {
             body {
-                padding: 8px;
+                padding-top: 8px;
             }
         }
         @media (max-height: 420px) {
             body {
-                padding: 6px;
+                padding-top: 6px;
             }
         }
 
