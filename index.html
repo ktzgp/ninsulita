@@ -44,7 +44,7 @@
             display: none;
             flex-direction: column;
             text-align: center;
-            background: white;
+            background: #f7f7f7;
             padding: 20px 24px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -186,7 +186,7 @@
         }
 
         .modal-view .modal-title {
-            font-size: 22px;
+            font-size: 24px;
             color: #111;
             font-weight: 500;
             line-height: 1.4;
@@ -205,7 +205,7 @@
         }
 
         .puzzle-container.completed {
-            background: #fff;
+            background: #f7f7f7;
         }
 
         .puzzle-grid-wrap {
@@ -213,12 +213,6 @@
             width: 100%;
             aspect-ratio: 1;
             margin: 0 auto;
-            transition: transform 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
-        }
-
-        .puzzle-grid-wrap.revealing {
-            transform: scale(0.88);
-            transition: transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
         }
 
         .puzzle-grid {
@@ -308,14 +302,14 @@
         }
 
         .puzzle-reveal-text .complete-line {
-            font-size: 16px;
+            font-size: 18px;
             color: #111;
             margin-bottom: 8px;
             line-height: 1.4;
         }
 
         .puzzle-reveal-text .valentine-question {
-            font-size: 17px;
+            font-size: 19px;
             color: #111;
             font-weight: 600;
             margin-bottom: 10px;
@@ -409,8 +403,8 @@
 
         /* Base Yes button: defined before media queries so responsive font-size overrides apply */
         .yes-only-btn {
-            font-size: 17px;
-            padding: 10px 20px;
+            font-size: 19px;
+            padding: 11px 22px;
             background: #FFDAE9;
             color: #333;
             border: 1px solid rgba(0,0,0,0.1);
@@ -435,18 +429,18 @@
                 max-width: calc(100vw - 20px);
             }
             .modal-view .modal-title {
-                font-size: 18px;
+                font-size: 20px;
                 margin-bottom: 12px;
             }
             .puzzle-reveal-text .complete-line {
-                font-size: 14px;
+                font-size: 16px;
             }
             .puzzle-reveal-text .valentine-question {
-                font-size: 15px;
+                font-size: 17px;
             }
             .yes-only-btn {
-                font-size: 15px;
-                padding: 9px 18px;
+                font-size: 17px;
+                padding: 10px 20px;
             }
             .puzzle-container {
                 width: min(75vw, 65vh);
@@ -464,18 +458,18 @@
                 max-width: calc(100vw - 16px);
             }
             .modal-view .modal-title {
-                font-size: 16px;
+                font-size: 18px;
                 margin-bottom: 10px;
             }
             .puzzle-reveal-text .complete-line {
-                font-size: 13px;
+                font-size: 15px;
             }
             .puzzle-reveal-text .valentine-question {
-                font-size: 14px;
+                font-size: 16px;
             }
             .yes-only-btn {
-                font-size: 14px;
-                padding: 8px 16px;
+                font-size: 16px;
+                padding: 9px 18px;
             }
             .puzzle-container {
                 width: min(78vw, 60vh);
@@ -493,18 +487,18 @@
                 max-width: calc(100vw - 12px);
             }
             .modal-view .modal-title {
-                font-size: 15px;
+                font-size: 17px;
                 margin-bottom: 8px;
             }
             .puzzle-reveal-text .complete-line {
-                font-size: 12px;
+                font-size: 14px;
             }
             .puzzle-reveal-text .valentine-question {
-                font-size: 13px;
+                font-size: 15px;
             }
             .yes-only-btn {
-                font-size: 13px;
-                padding: 7px 14px;
+                font-size: 15px;
+                padding: 8px 16px;
             }
             .puzzle-container {
                 width: min(80vw, 58vh);
@@ -637,22 +631,22 @@
                     <div class="puzzle-grid-wrap" id="puzzleGridWrap">
                         <div class="puzzle-grid" id="puzzleGrid"></div>
                         <div class="puzzle-full-image-overlay" id="puzzleFullImageOverlay">
-                            <img src="images/full-image.png" alt="" />
+                            <img src="images/78d3c77f-030c-4914-83b3-da6d6b90acbb.jpg" alt="" />
                         </div>
                     </div>
                 </div>
                 <div class="puzzle-reveal-text" id="puzzleRevealText">
                     <p class="complete-line">Tvoj osmijeh mi uljepša i najobičniji dan, a uz tebe se osjećam sretno i ispunjeno.</p>
                     <p class="valentine-question">Hoćeš li sa mnom provesti Valentinovo?</p>
-                    <button type="button" class="yes-only-btn" id="yesBtn">Yes</button>
+                    <button type="button" class="yes-only-btn" id="yesBtn">Da 😊</button>
                 </div>
             </div>
 
             <!-- VIEW: Success -->
             <div id="successView" class="modal-view">
-                <p class="modal-title">Yay, I can't wait!</p>
+                <p class="modal-title">Jedva čekam da se vidimo ❤️</p>
                 <div class="success-gif-wrap">
-                    <img src="giphy.gif" alt="" />
+                    <img src="1JmGiBtqTuehfYxuy9.webp" alt="" />
                 </div>
                 <button type="button" class="reset-btn" id="resetBtn">Reset</button>
             </div>
@@ -733,7 +727,7 @@
                     tile.classList.add('empty');
                     // No image: empty space is transparent until puzzle is solved
                 } else {
-                    tile.style.backgroundImage = `url('images/tile-${piece}.png')`;
+                    tile.style.backgroundImage = `url('images/image_part_00${piece}.jpg')`;
                     tile.onclick = () => moveTile(index);
                 }
                 
@@ -767,7 +761,7 @@
             const puzzleRevealText = document.getElementById('puzzleRevealText');
             const puzzleFullImageOverlay = document.getElementById('puzzleFullImageOverlay');
             const emptyTile = puzzleGrid.querySelector('.puzzle-tile.empty');
-            if (emptyTile) emptyTile.style.backgroundImage = "url('images/tile-3.png')";
+            if (emptyTile) emptyTile.style.backgroundImage = "url('images/image_part_003.jpg')";
             puzzleContainer.classList.add('completed');
             puzzleGrid.classList.add('merging');
             setTimeout(() => {
